@@ -8,6 +8,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     loginId: '',
+    rName:'',
+    rid:'ChIJtwgTP4dxhlQRo5wIHcln0es',
     openLineUp: true,
 
     queryDate:{

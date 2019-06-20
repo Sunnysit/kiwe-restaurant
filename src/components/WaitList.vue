@@ -17,7 +17,7 @@
         </div>
 
         <div class="card-action">
-          <button class="btn green">Send</button>
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Ready</button>
           <button class="btn grey">Cancel</button>
         </div>
       </div>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="card-action">
-          <button class="btn green">Send</button>
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Ready</button>
           <button class="btn grey">Cancel</button>
         </div>
       </div>
@@ -55,7 +55,7 @@
         </div>
 
         <div class="card-action">
-          <button class="btn green">Send</button>
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Ready</button>
           <button class="btn grey">Cancel</button>
         </div>
       </div>
@@ -99,12 +99,12 @@ export default {
     getListData(){
           
     let currentDate = `${this.$store.state.queryDate.year}-${this.$store.state.queryDate.month}-${this.$store.state.queryDate.date}`;
-
+    let rid = this.$store.state.rid;
     let that = this;
     let db = firebase.firestore();
  
 
-    db.collection("waitlist").where("status", "==", 'waiting').where("date","==",currentDate)
+    db.collection("waitlist").where("status", "==", 'waiting').where("date","==",currentDate).where("rid","==",rid)
     .onSnapshot(function(querySnapshot) {
            let spotCounter = {
                 smallSpot:1,
@@ -145,7 +145,16 @@ export default {
 
           })
       },
+      sendReadyUser(spotId){
 
+        let db = firebase.firestore();
+                return db.collection('waitlist').doc(spotId).update({
+                  status: 'success'
+               })
+      },
+      cancelUser(spotId){
+        console.log(spotId);
+      },
       updateTime(){
         setInterval(() => {
         this.currentTime = new Date().getTime()

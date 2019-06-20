@@ -17,7 +17,7 @@
      
     </div>
     <div class="row card-panel">
-         <h5>Table seat setting</h5>
+         <h5>Table seat</h5>
          <div class="input-field col s4">
           <input v-model.lazy="sizeStandardSmall"  id="size-small" type="number" >
           <label class="active" for="size-small">Maximium seat for small table</label>

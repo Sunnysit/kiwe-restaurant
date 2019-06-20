@@ -10,6 +10,15 @@ const getLoginId = (context,payload) =>{
     context.commit('GET_LOGIN_ID',payload);
 }
 
+const getRid = (context,payload) =>{
+    context.commit('GET_RID',payload);
+}
+
+
+const getRname = (context,payload) =>{
+    context.commit('GET_RNAME',payload);
+}
+
 const emptyWaitList = (context) => {
     context.commit('EMPTY_WAIT_LIST');
 }
@@ -54,6 +63,8 @@ export default {
     toggleLineupSwitch,
     getLineupSwitch,
     getLoginId,
+    getRid,
+    getRname,
     emptyWaitList,
     pushToSmallList,
     pushToMediumList,

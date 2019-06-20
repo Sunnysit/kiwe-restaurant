@@ -12,6 +12,15 @@ const GET_LOGIN_ID = (state,payload) =>{
     state.loginId = payload;
 }
 
+const GET_RID = (state,payload) =>{
+    state.rid = payload;
+}
+
+
+const GET_RNAME = (state,payload) =>{
+    state.rName = payload;
+}
+
 const EMPTY_WAIT_LIST = (state) =>{
     state.waitLineSmall= [];
     state.waitLineMedium = [];
@@ -59,6 +68,8 @@ export default {
     GET_LINEUP_SWITCH,
     TOGGLE_LINEUP_SWITCH,
     GET_LOGIN_ID,
+    GET_RID,
+    GET_RNAME,
     EMPTY_WAIT_LIST,
     PUSH_TO_SMALL_LIST,
     PUSH_TO_MEDIUM_LIST,

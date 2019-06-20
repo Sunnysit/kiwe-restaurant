@@ -42,6 +42,8 @@ export default {
                           console.log("Document data:", doc.data());
                         
                         this.$store.dispatch('getLoginId',doc.data().loginId);
+                        this.$store.dispatch('getRid',doc.data().rid);
+                        this.$store.dispatch('getRname',doc.data().rName);
                         this.$store.dispatch('getLineupSwitch',doc.data().openLineUp);
                         this.$store.dispatch('changeTableSizeSmall',doc.data().sizeStandard.small);
                         this.$store.dispatch('changeTableSizeMedium',doc.data().sizeStandard.medium);

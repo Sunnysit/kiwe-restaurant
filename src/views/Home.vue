@@ -1,5 +1,6 @@
 <template>
   <div class="lineup-control-container container">
+    <h1 class="title blue-text">{{rName}} Line up system</h1>
     <div v-if="openLineUp">
       <WaitList />
     </div>
@@ -24,7 +25,16 @@ export default {
     computed:{
     openLineUp(){
             return this.$store.state.openLineUp
-          }
+          },
+    rName(){
+      return this.$store.state.rName
+    }
     }
 }
 </script>
+<style scoped>
+.title{
+  font-size: 3rem;
+
+}
+</style>
