@@ -17,6 +17,21 @@
      
     </div>
     <div class="row card-panel">
+         <h5>Estimated wait time</h5>
+         <div class="input-field col s4">
+          <input v-model.lazy="estTimeSmall"  id="time-small" type="number" >
+          <label class="active" for="time-small">Wait time for small table</label>
+        </div>
+        <div class="input-field col s4">
+          <input v-model.lazy="estTimeMedium"  id="time-medium" type="number" >
+          <label class="active" for="time-medium">Wait time for medium table</label>
+        </div>
+         <div class="input-field col s4">
+          <input v-model.lazy="estTimeLarge"  id="time-large" type="number" >
+          <label class="active" for="time-medium">Wait timefor large table</label>
+        </div>
+    </div>
+    <div class="row card-panel">
          <h5>Table seat</h5>
          <div class="input-field col s4">
           <input v-model.lazy="sizeStandardSmall"  id="size-small" type="number" >
@@ -94,6 +109,30 @@ export default {
             this.$store.dispatch('changeTableSizeLarge',value);
           }
         
+      },
+       estTimeSmall:{
+          get() {
+            return this.$store.state.estTime.small
+          },
+          set(value) {
+            this.$store.dispatch('changeEstTimeSmall',value);
+          }
+      },
+      estTimeMedium:{
+          get() {
+            return this.$store.state.estTime.medium
+          },
+          set(value) {
+            this.$store.dispatch('changeEstTimeMedium',value);
+          }
+      },
+      estTimeLarge:{
+          get() {
+            return this.$store.state.estTime.large
+          },
+          set(value) {
+            this.$store.dispatch('changeEstTimeLarge',value);
+          }
       }
 
 
@@ -101,17 +140,21 @@ export default {
   methods:{
      saveOptions(){
            let db = firebase.firestore();
-               //firestore is the cloud
-                return db.collection('restaurants').doc('LRhdqeE2bEbH7QrXHOETWX66D183').update({
-                  loginId: 'LRhdqeE2bEbH7QrXHOETWX66D183',
-                  rid:  'ChIJUYBL3XtxhlQRrOYhW5_6DYc',
+                return db.collection('restaurants').doc(this.$store.state.loginId).update({
                   openLineUp: this.$store.state.openLineUp,
                   sizeStandard:{
                       small:  parseInt(this.$store.state.sizeStandard.small),
                       medium: parseInt(this.$store.state.sizeStandard.medium),
                       large:  parseInt(this.$store.state.sizeStandard.large)
+                  },
+                  waitTime:{
+                      small:  parseInt(this.$store.state.estTime.small),
+                      medium: parseInt(this.$store.state.estTime.medium),
+                      large:  parseInt(this.$store.state.estTime.large)
                   }
-               })
+               }).then(
+                 alert('Save Success!')
+               )
      } 
   }
 }

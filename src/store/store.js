@@ -28,7 +28,14 @@ export default new Vuex.Store({
       small:4,
       medium:8,
       large:14
+    },
+
+    estTime:{
+      small:10,
+      medium:20,
+      large:30
     }
+
   },
   mutations,
   actions

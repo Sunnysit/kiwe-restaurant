@@ -48,7 +48,10 @@ export default {
                         this.$store.dispatch('changeTableSizeSmall',doc.data().sizeStandard.small);
                         this.$store.dispatch('changeTableSizeMedium',doc.data().sizeStandard.medium);
                         this.$store.dispatch('changeTableSizeLarge',doc.data().sizeStandard.large);
-                          
+                        this.$store.dispatch('changeEstTimeSmall',doc.data().waitTime.small);
+                        this.$store.dispatch('changeEstTimeMedium',doc.data().waitTime.medium);  
+                        this.$store.dispatch('changeEstTimeLarge',doc.data().waitTime.large);
+
                           //Go to Homepage
                           this.$router.push('home');
 

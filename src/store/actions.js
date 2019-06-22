@@ -59,6 +59,18 @@ const changeTableSizeLarge = (context,payload) => {
     context.commit('CHANGE_TABLE_SIZE_LARGE',payload);
 }
 
+const changeEstTimeSmall = (context,payload) => {
+    context.commit('CHANGE_EST_TIME_SMALL',payload);
+}
+
+const changeEstTimeMedium = (context,payload) => {
+    context.commit('CHANGE_EST_TIME_MEDIUM',payload);
+}
+
+const changeEstTimeLarge = (context,payload) => {
+    context.commit('CHANGE_EST_TIME_LARGE',payload);
+}
+
 export default {
     toggleLineupSwitch,
     getLineupSwitch,
@@ -74,5 +86,8 @@ export default {
     changeQueryDateDay,
     changeTableSizeSmall,
     changeTableSizeMedium,
-    changeTableSizeLarge
+    changeTableSizeLarge,
+    changeEstTimeSmall,
+    changeEstTimeMedium,
+    changeEstTimeLarge
 }

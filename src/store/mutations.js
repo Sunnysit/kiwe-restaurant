@@ -64,6 +64,18 @@ const CHANGE_TABLE_SIZE_LARGE = (state,payload) => {
     state.sizeStandard.large = payload;
 }
 
+const CHANGE_EST_TIME_SMALL = (state,payload) => {
+    state.estTime.small = payload;
+}
+
+const CHANGE_EST_TIME_MEDIUM = (state,payload) => {
+    state.estTime.medium = payload;
+}
+
+const CHANGE_EST_TIME_LARGE = (state,payload) => {
+    state.estTime.large = payload;
+}
+
 export default {
     GET_LINEUP_SWITCH,
     TOGGLE_LINEUP_SWITCH,
@@ -79,6 +91,9 @@ export default {
     CHANGE_QUERY_DATE_DAY,
     CHANGE_TABLE_SIZE_SMALL,
     CHANGE_TABLE_SIZE_MEDIUM,
-    CHANGE_TABLE_SIZE_LARGE
+    CHANGE_TABLE_SIZE_LARGE,
+    CHANGE_EST_TIME_SMALL,
+    CHANGE_EST_TIME_MEDIUM,
+    CHANGE_EST_TIME_LARGE
 
 }

@@ -18,7 +18,7 @@
 
         <div class="card-action">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Ready</button>
-          <button class="btn grey">Cancel</button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
 
         <div class="card-action">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Ready</button>
-          <button class="btn grey">Cancel</button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
 
         <div class="card-action">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Ready</button>
-          <button class="btn grey">Cancel</button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
     </div>
@@ -153,7 +153,13 @@ export default {
                })
       },
       cancelUser(spotId){
-        console.log(spotId);
+        let db = firebase.firestore();
+
+        db.collection("waitlist").doc(spotId).delete().then(function() {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
       },
       updateTime(){
         setInterval(() => {
