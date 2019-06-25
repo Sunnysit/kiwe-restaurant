@@ -11,6 +11,10 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '*',
+      redirect: '/signin'
+    },
+    {
       path: '/',
       name: 'home',
       component: Home

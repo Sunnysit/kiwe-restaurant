@@ -16,8 +16,8 @@
           <span class="white-text red">{{spot.addOptionsSeating}}</span>
         </div>
 
-        <div class="card-action">
-          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Ready</button>
+        <div class="card-action btn-group">
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
           <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
@@ -35,8 +35,8 @@
           <span class="white-text red">{{spot.addOptionsSeating}}</span>
         </div>
 
-        <div class="card-action">
-          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Ready</button>
+        <div class="card-action btn-group">
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
           <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
@@ -54,8 +54,8 @@
           <span class="white-text red">{{spot.addOptionsSeating}}</span>
         </div>
 
-        <div class="card-action">
-          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Ready</button>
+        <div class="card-action btn-group">
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
           <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
@@ -176,5 +176,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+    .btn-group{
+      display: flex;
+      justify-content: space-around;
+    }
 </style>
