@@ -8,7 +8,6 @@
       <div class="card blue" v-for="spot in waitLineSmall" :key="spot.joinTime">
         <div class="card-content white-text">
           <span class="card-title">{{spot.nickName}} - {{spot.grSize}}</span>
-          <p>Group size:</p>
           <p>Join time:{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}:{{new Date(spot.joinTime).getSeconds()}}</p>
           <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime())/60000).toFixed(0)}}mins</p>
           <span class="white-text red">{{spot.addOptionsAccs}}</span>
