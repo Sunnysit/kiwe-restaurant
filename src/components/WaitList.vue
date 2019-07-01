@@ -17,6 +17,7 @@
 
         <div class="card-action btn-group">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
+          <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange">5mins</button>
           <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
@@ -36,6 +37,7 @@
 
         <div class="card-action btn-group">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
+                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange">5mins</button>
           <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
@@ -55,6 +57,7 @@
 
         <div class="card-action btn-group">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
+                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange">5mins</button>
           <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
@@ -149,6 +152,13 @@ export default {
         let db = firebase.firestore();
                 return db.collection('waitlist').doc(spotId).update({
                   status: 'success'
+               })
+      },
+      sendNotification(spotId){
+
+        let db = firebase.firestore();
+                return db.collection('waitlist').doc(spotId).update({
+                  notification: '5 minutes'
                })
       },
       cancelUser(spotId){
