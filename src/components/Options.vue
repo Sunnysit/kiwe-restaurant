@@ -1,6 +1,6 @@
 <template>
   <div class="container options-container">
-    <div class="row card-panel">
+    <!-- <div class="row card-panel">
         <h5>History mode</h5>
         <div class="input-field col s4">
           <input v-model.lazy="year"  id="year" type="number" >
@@ -15,7 +15,7 @@
           <label class="active" for="date">Date</label>
         </div>
      
-    </div>
+    </div> -->
     <div class="row card-panel">
          <h5>Estimated wait time</h5>
          <div class="input-field col s4">
