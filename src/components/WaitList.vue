@@ -8,8 +8,8 @@
       <div class="card blue" v-for="spot in waitLineSmall" :key="spot.joinTime">
         <div class="card-content white-text">
           <span class="card-title">{{spot.nickName}} - {{spot.grSize}}</span>
-          <p>Join time:{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}:{{new Date(spot.joinTime).getSeconds()}}</p>
-          <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime())/60000).toFixed(0)}}mins</p>
+          <p>Join time:{{new Date(spoqt.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}:{{new Date(spot.joinTime).getSeconds()}}</p>
+          <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime())/60000+1).toFixed(0)}}mins</p>
           <span class="white-text red">{{spot.addOptionsAccs}}</span>
           <br/>
           <span class="white-text red">{{spot.addOptionsSeating}}</span>
@@ -29,7 +29,7 @@
         <div class="card-content white-text">
            <span class="card-title">{{spot.nickName}} - {{spot.grSize}}</span>
           <p>Join time:{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}:{{new Date(spot.joinTime).getSeconds()}}</p>
-          <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime())/60000).toFixed(0)}}mins</p>
+          <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime())/60000+1).toFixed(0)}}mins</p>
           <span class="white-text red">{{spot.addOptionsAccs}}</span>
           <br/>
           <span class="white-text red">{{spot.addOptionsSeating}}</span>
@@ -49,7 +49,7 @@
         <div class="card-content white-text">
           <span class="card-title">{{spot.nickName}} - {{spot.grSize}}</span>
           <p>Join time:{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}:{{new Date(spot.joinTime).getSeconds()}}</p>
-          <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime())/60000).toFixed(0)}}mins</p>
+          <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime()+1)/60000).toFixed(0)}}mins</p>
           <span class="white-text red">{{spot.addOptionsAccs}}</span>
           <br/>
           <span class="white-text red">{{spot.addOptionsSeating}}</span>
