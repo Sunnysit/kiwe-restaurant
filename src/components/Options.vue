@@ -47,6 +47,7 @@
         </div>
     </div>
      <button v-on:click="saveOptions" class="btn green">Save</button>
+     <!-- <button v-on:click="updateGallery" class="btn blue">Gallery Get</button> -->
   </div>
 </template>
 
@@ -155,7 +156,39 @@ export default {
                }).then(
                  alert('Save Success!')
                )
-     } 
+     },
+
+      updateGallery(){
+        let rid = this.$store.state.rid;
+       let apikey = 'AIzaSyCxKHIpSrggNO7p1N-n7V0FkJ8DohiK9MQ'
+
+      let api = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=' + rid + '&key='+ apikey;
+      //let api = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=' + rid + '&key='+ apikey;
+      
+      //Get imgs from google map api
+      this.axios.get(api,{ crossdomain: true }).then((response) => {
+          console.log(response);
+  
+          let restaurantGallery = response.data.result.photos.map((item)=>{
+
+            //myItem.photo_reference = item.photo_reference;
+            //myItem.attributions = item.html_attributions[0];
+            return { photo_reference: item.photo_reference,
+                     html_attributions: item.html_attributions[0]  }
+
+          })
+
+            let db = firebase.firestore();
+                return db.collection('restaurants').doc(this.$store.state.loginId).update({
+                    restaurantGallery: restaurantGallery
+
+                }).then(alert('OK'));
+            })
+        }
+
+      
+
+     
   }
 }
 </script>
