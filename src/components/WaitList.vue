@@ -100,7 +100,7 @@ export default {
   methods:{
     getListData(){
           
-    let currentDate = `${this.$store.state.queryDate.year}-${this.$store.state.queryDate.month}-${this.$store.state.queryDate.date}`;
+    let currentDate = `${this.$store.state.queryDate.month}-${this.$store.state.queryDate.date}-${this.$store.state.queryDate.year}`;
     let rid = this.$store.state.rid;
     let that = this;
     let db = firebase.firestore();
