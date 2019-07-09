@@ -18,7 +18,7 @@
         <div class="card-action btn-group">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
           <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange">5mins</button>
-          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
         <div class="card-action btn-group">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
                     <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange">5mins</button>
-          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
         <div class="card-action btn-group">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
                     <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange">5mins</button>
-          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`)" class="btn grey">Cancel</button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey">Cancel</button>
         </div>
       </div>
     </div>
@@ -161,14 +161,24 @@ export default {
                   notification: '5 minutes'
                })
       },
-      cancelUser(spotId){
+      cancelUser(spotId,uId){
         let db = firebase.firestore();
+        console.log(uId);
 
-        db.collection("waitlist").doc(spotId).delete().then(function() {
+
+        
+
+        db.collection("waitlist").doc(spotId).delete();
+        db.collection("users").doc(uId).update({
+          isInLine: false,
+          currentWaiting: ""
+        }).then(function() {
             console.log("Document successfully deleted!");
-        }).catch(function(error) {
+        })
+        .catch(function(error) {
             console.error("Error removing document: ", error);
         });
+        
       },
       updateTime(){
         setInterval(() => {
