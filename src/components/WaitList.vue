@@ -1,6 +1,6 @@
 <template>
   <div class="waitlist-container">
-    <button class="btn green" v-on:click="getListData">Fetch</button>
+    <!-- <button class="btn green" v-on:click="getListData">Fetch</button> -->
     <div class="row">
     <!-- Small Group -->
     <div class="col s12 m4">
@@ -16,9 +16,9 @@
         </div>
 
         <div class="card-action btn-group">
-          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
-          <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange">5mins</button>
-          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey">Cancel</button>
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><i class="fas fa-check"></i></button>
+          <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange"><i class="fas fa-bell"></i></button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><i class="fas fa-times"></i></button>
         </div>
       </div>
     </div>
@@ -36,9 +36,9 @@
         </div>
 
         <div class="card-action btn-group">
-          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
-                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange">5mins</button>
-          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey">Cancel</button>
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><i class="fas fa-check"></i></button>
+                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange"><i class="fas fa-bell"></i></button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><i class="fas fa-times"></i></button>
         </div>
       </div>
     </div>
@@ -56,9 +56,9 @@
         </div>
 
         <div class="card-action btn-group">
-          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green">Send</button>
-                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange">5mins</button>
-          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey">Cancel</button>
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><i class="fas fa-check"></i></button>
+                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange"><i class="fas fa-bell"></i></button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><i class="fas fa-times"></i></button>
         </div>
       </div>
     </div>
