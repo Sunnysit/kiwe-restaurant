@@ -164,21 +164,18 @@ export default {
       cancelUser(spotId,uId){
         let db = firebase.firestore();
         console.log(uId);
-
-
-        
+        console.log('database id');
+        console.log(spotId);
 
         db.collection("waitlist").doc(spotId).delete();
         db.collection("users").doc(uId).update({
           isInLine: false,
-          currentWaiting: ""
         }).then(function() {
             console.log("Document successfully deleted!");
         })
         .catch(function(error) {
             console.error("Error removing document: ", error);
-        });
-        
+        }); 
       },
       updateTime(){
         setInterval(() => {
