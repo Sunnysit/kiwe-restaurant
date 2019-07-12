@@ -25,7 +25,7 @@
       <!-- Medium Group -->
     <div class="col s12 m4">
          <p>Medium group</p>
-      <div class="card orange" v-for="spot in waitLineMedium" :key="spot.joinTime">
+      <div class="card teal lighten-2" v-for="spot in waitLineMedium" :key="spot.joinTime">
         <div class="card-content white-text">
            <span class="card-title">{{spot.nickName}} - {{spot.grSize}}</span>
           <p>Join time:{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}:{{new Date(spot.joinTime).getSeconds()}}</p>
@@ -37,7 +37,7 @@
 
         <div class="card-action btn-group">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><i class="fas fa-check"></i></button>
-                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange"><i class="fas fa-bell"></i></button>
+                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange "><i class="fas fa-bell"></i></button>
           <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><i class="fas fa-times"></i></button>
         </div>
       </div>
