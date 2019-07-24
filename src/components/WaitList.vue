@@ -1,5 +1,5 @@
 <template>
-  <div class="waitlist-container">
+  <section class="waitlist-section">
     <!-- <button class="btn green" v-on:click="getListData">Fetch</button> -->
     <div class="row">
     <!-- Small Group -->
@@ -65,12 +65,13 @@
 
 
   </div>
-  
-  </div>
+  </section>
 </template>
 
 <script>
 import firebase from 'firebase';
+import Header from './Header.vue';
+import Footer from './Footer.vue';
 
 export default {
   name: 'WaitList',
@@ -196,4 +197,10 @@ export default {
       display: flex;
       justify-content: space-around;
     }
+    .waitlist-section{
+      background-color: #fff;
+      border-radius: 20px;
+    }
+
+    
 </style>

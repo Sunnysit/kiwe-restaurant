@@ -1,6 +1,7 @@
 <template>
+ <section class="home-section">
+   <Header />
   <div class="lineup-control-container container">
-    <h1 class="title blue-text">{{rName}} Line up system</h1>
     <div v-if="openLineUp">
       <WaitList />
     </div>
@@ -10,31 +11,41 @@
        <button v-on:click="$router.push('/settings')" class="btn blue">Go to Settings</button>
     </div>
   </div>
+  <Footer />
+ </section>
 </template>
 
 <script>
 
 import WaitList from '../components/WaitList.vue';
-
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
 
 export default {
   name: 'home',
   components: {
     WaitList,
+    Header,
+    Footer
   },
     computed:{
     openLineUp(){
             return this.$store.state.openLineUp
           },
-    rName(){
-      return this.$store.state.rName
-    }
     }
 }
 </script>
 <style scoped>
+.home-section{
+  background-color: #664B1E;
+
+}
 .title{
   font-size: 3rem;
 
 }
+
+.lineup-control-container{
+      min-height: 100vh;
+    }
 </style>

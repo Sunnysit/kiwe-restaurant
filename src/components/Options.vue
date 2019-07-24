@@ -46,7 +46,7 @@
           <label class="active" for="size-medium">Maximium seat for large table</label>
         </div>
     </div>
-     <button v-on:click="saveOptions" class="btn green">Save</button>
+     <button v-on:click="saveOptions" class="btn btn-text">Save</button>
      <!-- <button v-on:click="updateGallery" class="btn blue">Gallery Get</button> -->
   </div>
 </template>
@@ -195,5 +195,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+  .options-container{
+  min-height:100vh;
+}
 </style>

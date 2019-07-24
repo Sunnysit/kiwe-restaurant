@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Signin from './views/Signin.vue'
 import Settings from './views/Settings.vue'
+import firebase from 'firebase';
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -36,3 +37,24 @@ export default new Router({
     },
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  const currentUser = firebase.auth().currentUser;
+  if (to.fullPath !== '/signin') {
+
+      if (!currentUser) {
+        next('/signin');
+        return
+      }
+      
+      next();
+      return
+    
+    
+  }
+
+  next();
+});
+
+
+export default router;

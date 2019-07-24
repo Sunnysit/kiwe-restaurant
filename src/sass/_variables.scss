@@ -1,0 +1,41 @@
+///////////////////////VARIABLES
+
+//Dark green
+$main-green: rgba(98, 175, 70, 1); //buttoms, search border, drop down header, reservation info border,"hellos", sections name.
+
+// Light green
+$csecond-green:rgba(235, 241, 200, 1); // All pages background, login form
+
+//Orange
+$accent:rgba(246, 167, 27, 1); //active icons, number border, waiting time background, restaurant name, information confirmation
+
+//BUTTOMS
+$bt-font-family : 'Open Sans';
+$bt-font-weight : bold;
+$bt-font-size : 18px;
+$bt-color : rgb(255, 255, 255); //white
+$bt-background-color: $main-green; //Dark green
+$bt-border-radius: 7px;
+
+
+//section names
+$sc-font-family : 'Source Serif Pro';//font family
+$sc-font-size : 20px;//font size
+$sc-text-transform : uppercase; //text transform
+$sc-font-color: $main-green; //Dark green
+$sc-border-radius: 20px;
+
+//waiting time box
+$wtb-background: $accent; //Orange
+$wtb-radius: 7px;
+
+   //witing time text
+       $wtb-ff: Myriad Pro; //font family
+       $wtb-fs: 20px; //font size
+       $wt-lh: 15px; //line height
+       $wt-fc: rgb(255, 255, 255);; //font color white
+
+   //witing time text HOVER IMAGE
+       $wtb-ff: Myriad Pro; //font family
+       $wtb-fs: 13px; //font size
+       $wt-lh: 10px; //line height
