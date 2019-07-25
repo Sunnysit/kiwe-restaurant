@@ -46,7 +46,7 @@ export default {
       background-color: #fff;
       border-radius: 20px;
       margin-bottom: 20px;
-
+      padding: 8px 0;
       h5{
         color: #62af46;
         font-family: "Source Serif Pro", sans-serif;

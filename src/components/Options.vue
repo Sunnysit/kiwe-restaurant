@@ -231,6 +231,10 @@ export default {
         padding: 10px;
         border-radius: 5px;
       }
+
+      @media screen and(max-width: 500px) {
+        width: 100%;
+      }
   }
   
 </style>
