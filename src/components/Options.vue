@@ -14,36 +14,35 @@
           <input v-model.lazy="date"  id="date" type="number" >
           <label class="active" for="date">Date</label>
         </div>
-     
     </div> -->
-    <div class="row card-panel">
-         <h5>Estimated wait time</h5>
-         <div class="input-field col s4">
+    <div class="card-panel">
+         <h4>Estimated wait time</h4>
+         <div class="input-field">
           <input v-model.lazy="estTimeSmall"  id="time-small" type="number" >
-          <label class="active" for="time-small">Wait time for small table</label>
+          <label class="active" for="time-small">for small tables</label>
         </div>
-        <div class="input-field col s4">
+        <div class="input-field">
           <input v-model.lazy="estTimeMedium"  id="time-medium" type="number" >
-          <label class="active" for="time-medium">Wait time for medium table</label>
+          <label class="active" for="time-medium">for medium tables</label>
         </div>
-         <div class="input-field col s4">
+         <div class="input-field">
           <input v-model.lazy="estTimeLarge"  id="time-large" type="number" >
-          <label class="active" for="time-medium">Wait timefor large table</label>
+          <label class="active" for="time-medium">for large tables</label>
         </div>
     </div>
-    <div class="row card-panel">
-         <h5>Table seat</h5>
-         <div class="input-field col s4">
+    <div class="card-panel">
+         <h4>Max table seat</h4>
+         <div class="input-field">
           <input v-model.lazy="sizeStandardSmall"  id="size-small" type="number" >
-          <label class="active" for="size-small">Maximium seat for small table</label>
+          <label class="active" for="size-small">for small tables</label>
         </div>
-        <div class="input-field col s4">
+        <div class="input-field">
           <input v-model.lazy="sizeStandardMedium"  id="size-medium" type="number" >
-          <label class="active" for="size-medium">Maximium seat for medium table</label>
+          <label class="active" for="size-medium">for medium tables</label>
         </div>
-         <div class="input-field col s4">
+         <div class="input-field">
           <input v-model.lazy="sizeStandardLarge"  id="size-large" type="number" >
-          <label class="active" for="size-medium">Maximium seat for large table</label>
+          <label class="active" for="size-medium">for large tables</label>
         </div>
     </div>
      <button v-on:click="saveOptions" class="btn btn-text">Save</button>
@@ -195,7 +194,43 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../sass/_variables.scss";
   .options-container{
-  min-height:100vh;
+  background-color: #fff;
+  border-radius: 20px;
+  padding-bottom: 8px;
 }
+
+  .card-panel{
+    margin-top: 8px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    h4{
+    font-size: 1.2rem;
+    margin: 0 auto;
+    font-weight: bold;
+    color: black;
+    line-height: 1;
+    padding-top: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    }
+    
+
+    
+  }
+
+  .input-field{
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+
+      input{
+        border: 3px solid $accent;
+        padding: 10px;
+        border-radius: 5px;
+      }
+  }
+  
 </style>

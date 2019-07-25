@@ -5,13 +5,12 @@
     <div v-if="openLineUp">
       <WaitList />
     </div>
-    <div v-else>
+    <div class="no-lineup-panel" v-else>
        <h5>Currently,line up system has not been activated.</h5>
        <h5>Please activate it in Settings.</h5>
-       <button v-on:click="$router.push('/settings')" class="btn blue">Go to Settings</button>
+       <button v-on:click="$router.push('/settings')" class="btn btn-text">Go to Settings</button>
     </div>
   </div>
-  <Footer />
  </section>
 </template>
 
@@ -19,14 +18,13 @@
 
 import WaitList from '../components/WaitList.vue';
 import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
+
 
 export default {
   name: 'home',
   components: {
     WaitList,
     Header,
-    Footer
   },
     computed:{
     openLineUp(){
@@ -46,6 +44,13 @@ export default {
 }
 
 .lineup-control-container{
-      min-height: 100vh;
+      min-height: 90vh;
     }
+
+.no-lineup-panel{
+  text-align: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 8px 0;
+}
 </style>

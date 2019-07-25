@@ -38,5 +38,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  .lineup-control{
+      background-color: #fff;
+      border-radius: 20px;
+      margin-bottom: 20px;
 
+      h5{
+        color: #62af46;
+        font-family: "Source Serif Pro", sans-serif;
+        font-size: 1.2rem;
+        margin: 0;
+        padding-bottom: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+  }
 </style>

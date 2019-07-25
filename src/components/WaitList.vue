@@ -1,66 +1,75 @@
 <template>
   <section class="waitlist-section">
     <!-- <button class="btn green" v-on:click="getListData">Fetch</button> -->
-    <div class="row">
+    <div class="waitlist-container">
     <!-- Small Group -->
     <div class="col s12 m4">
-        <p>Small group</p>
-      <div class="card blue" v-for="spot in waitLineSmall" :key="spot.joinTime">
-        <div class="card-content white-text">
-          <span class="card-title">{{spot.nickName}} - {{spot.grSize}}</span>
-          <p>Join time:{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}:{{new Date(spot.joinTime).getSeconds()}}</p>
-          <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime())/60000+1).toFixed(0)}}mins</p>
-          <span class="white-text red">{{spot.addOptionsAccs}}</span>
-          <br/>
-          <span class="white-text red">{{spot.addOptionsSeating}}</span>
-        </div>
+        <p class="group-title">Small group</p>
+        <ul class="single-list">
+          <li class="card" v-for="spot in waitLineSmall" :key="spot.joinTime">
+          <div class="card-content white-text">
+            <h2 class="card-title"><span>{{spot.nickName}}</span><span class="text-orange">{{spot.grSize}}</span></h2>
+            <p class="join-time"><span>Join time</span><span class="text-orange">{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}</span></p>
+            <p class="wait-time"><span>Time waited</span><span class="text-orange">{{ ((currentTime-new Date(spot.joinTime).getTime())/60000+1).toFixed(0)}}min</span></p>
+            <div class="addition-container">
+            <p>{{spot.addOptionsAccs}}</p>
+            <p>{{spot.addOptionsSeating}}</p>
+            </div>
+          </div>
 
-        <div class="card-action btn-group">
-          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><i class="fas fa-check"></i></button>
-          <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange"><i class="fas fa-bell"></i></button>
-          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><i class="fas fa-times"></i></button>
-        </div>
-      </div>
+          <div class="card-action btn-group">
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><img src="@/assets/kiwe__Done.png" alt="icon-done"></button>
+          <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange "><img src="@/assets/kiwe__FiveMinute.png" alt="icon-notification"></button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><img src="@/assets/kiwe__Cancel.png" alt="icon-cancel"></button></div>
+          </li>
+        </ul>
     </div>
+    <div class="divider"></div>
       <!-- Medium Group -->
     <div class="col s12 m4">
-         <p>Medium group</p>
-      <div class="card teal lighten-2" v-for="spot in waitLineMedium" :key="spot.joinTime">
+         <p class="group-title">Medium group</p>
+      <ul class="single-list">
+      <li class="card" v-for="spot in waitLineMedium" :key="spot.joinTime">
         <div class="card-content white-text">
-           <span class="card-title">{{spot.nickName}} - {{spot.grSize}}</span>
-          <p>Join time:{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}:{{new Date(spot.joinTime).getSeconds()}}</p>
-          <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime())/60000+1).toFixed(0)}}mins</p>
-          <span class="white-text red">{{spot.addOptionsAccs}}</span>
-          <br/>
-          <span class="white-text red">{{spot.addOptionsSeating}}</span>
+            <h2 class="card-title"><span>{{spot.nickName}}</span><span class="text-orange">{{spot.grSize}}</span></h2>
+            <p class="join-time"><span>Join time</span><span class="text-orange">{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}</span></p>
+            <p class="wait-time"><span>Time waited</span><span class="text-orange">{{ ((currentTime-new Date(spot.joinTime).getTime())/60000+1).toFixed(0)}}min</span></p>
+            <div class="addition-container">
+            <p>{{spot.addOptionsAccs}}</p>
+            <p>{{spot.addOptionsSeating}}</p>
+            </div>
         </div>
 
         <div class="card-action btn-group">
-          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><i class="fas fa-check"></i></button>
-                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange "><i class="fas fa-bell"></i></button>
-          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><i class="fas fa-times"></i></button>
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><img src="@/assets/kiwe__Done.png" alt="icon-done"></button>
+          <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange "><img src="@/assets/kiwe__FiveMinute.png" alt="icon-notification"></button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><img src="@/assets/kiwe__Cancel.png" alt="icon-cancel"></button>
         </div>
-      </div>
+      </li>
+      </ul>
     </div>
+    <div class="divider"></div>
       <!-- Large Group -->
     <div class="col s12 m4">
-         <p>Large group</p>
-      <div class="card green lighten-2" v-for="spot in waitLineLarge" :key="spot.joinTime">
+      <p class="group-title">Large group</p>
+      <ul class="single-list">
+      <li class="card" v-for="spot in waitLineLarge" :key="spot.joinTime">
         <div class="card-content white-text">
-          <span class="card-title">{{spot.nickName}} - {{spot.grSize}}</span>
-          <p>Join time:{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}:{{new Date(spot.joinTime).getSeconds()}}</p>
-          <p>Wait Time:{{ ((currentTime-new Date(spot.joinTime).getTime()+1)/60000).toFixed(0)}}mins</p>
-          <span class="white-text red">{{spot.addOptionsAccs}}</span>
-          <br/>
-          <span class="white-text red">{{spot.addOptionsSeating}}</span>
+            <h2 class="card-title"><span>{{spot.nickName}}</span><span class="text-orange">{{spot.grSize}}</span></h2>
+            <p class="join-time"><span>Join time</span><span class="text-orange">{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}</span></p>
+            <p class="wait-time"><span>Time waited</span><span class="text-orange">{{ ((currentTime-new Date(spot.joinTime).getTime())/60000+1).toFixed(0)}}min</span></p>
+            <div class="addition-container">
+            <p>{{spot.addOptionsAccs}}</p>
+            <p>{{spot.addOptionsSeating}}</p>
+            </div>
         </div>
 
         <div class="card-action btn-group">
-          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><i class="fas fa-check"></i></button>
-                    <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange"><i class="fas fa-bell"></i></button>
-          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><i class="fas fa-times"></i></button>
-        </div>
-      </div>
+          <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><img src="@/assets/kiwe__Done.png" alt="icon-done"></button>
+          <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange "><img src="@/assets/kiwe__FiveMinute.png" alt="icon-notification"></button>
+          <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><img src="@/assets/kiwe__Cancel.png" alt="icon-cancel"></button> </div>
+      </li>
+      </ul>
     </div>
 
 
@@ -70,8 +79,8 @@
 
 <script>
 import firebase from 'firebase';
-import Header from './Header.vue';
-import Footer from './Footer.vue';
+
+
 
 export default {
   name: 'WaitList',
@@ -193,14 +202,110 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    .btn-group{
-      display: flex;
-      justify-content: space-around;
-    }
+@import "../sass/_variables.scss";
+    
     .waitlist-section{
       background-color: #fff;
       border-radius: 20px;
+      
     }
 
+    .group-title{
+    color: $main-green;
+    font-family: "Source Serif Pro", sans-serif;
+    font-size: 1.2rem;
+    margin-top: 0;
+    padding-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    }
+
+    .waitlist-container{
+      padding-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 5px 1fr 5px 1fr;
+      grid-gap: 10px;
+      min-height: 500px;
+
+      @media screen and (max-width: 700px) {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    .divider{
+    background-color: $main-green;
+    margin: 20px 0;
+    border-radius: 20px;
+    }
+
+    .single-list{
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-left: 0;
+      padding-left: 0;
+      align-items: center;
+
+      .card{
+        border: 4px solid $main-green;
+        border-radius: 10px;
+        
+        height: 180px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        @media screen and (max-width: 700px) {
+        width: 60vw;
+        }
+      }
+
+      .card-title,
+      .join-time,
+      .wait-time{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 8px;
+        margin: 0;
+        font-weight: bold;
+      }
+      .card-content{
+        width: 100%;
+      }
+
+      .addition-container p{
+        color: $accent;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .card-action{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 8px;
+        padding: 0 8px;
+        .btn{
+          width: 40px;
+          height:40px;
+          background-color: $main-green;
+          outline: none;
+          border: none;
+          img{
+            display: block;
+            width: 20px;
+            margin: 0 auto;
+          }
+          
+        }
+      }
+    }
+    .text-orange{
+      color: $accent;
+      
+    }
     
 </style>

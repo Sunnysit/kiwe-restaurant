@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/signin">Signin</router-link> |
-      <router-link to="/home">Home</router-link> |
-      <router-link to="/settings">Settings</router-link>
-    </div> -->
     <router-view/>
   </div>
 </template>
@@ -22,12 +17,16 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  overflow-x: hidden;
 }
 #nav {
   padding: 20px 0 0;
   a {
     font-weight: bold;
     color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     &.router-link-exact-active {
       color: #42b983;
     }
@@ -40,7 +39,10 @@ body{
     display: block;
     color: white;
     width: 200px;
-    // padding: 10px 0;
+    padding: 10px 0;
+    outline: none;
+    border: none;
+    box-shadow: 2px 2px 4px $bt-background-color;
     cursor: pointer;
   }
 
@@ -54,12 +56,8 @@ body{
     text-transform: capitalize;
   }
 
-  .router-link-active p,
-.router-link-active svg path 
-{
-    color: orange !important;
-    fill: orange;
-    
-}
+  .red-text{
+    color: red;
+  }
 
 </style>

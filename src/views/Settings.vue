@@ -1,16 +1,15 @@
 <template>
-  <section class="settings">
+  <section class="settings-section">
      <Header />
      <LineupSwitch />
      <Options />
-     <Footer />
   </section>
 </template>
 <script>
 import Options from '../components/Options.vue';
 import LineupSwitch from '../components/LineupSwitch.vue';
 import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
+
 
 export default {
   name:'Settings',
@@ -18,7 +17,6 @@ export default {
     Options,
     LineupSwitch,
     Header,
-    Footer
   },
   computed:{},
   methods:{
@@ -28,7 +26,11 @@ export default {
 }
 </script>
 <style scoped>
+.settings-section{
+  background-color: #664B1E;
+  min-height:100vh;
 
+}
 
 </style>
 

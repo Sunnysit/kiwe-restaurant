@@ -1,6 +1,8 @@
 <template>
 <section class="header">
-    <img src="@/assets/kiwe-logo.png" alt="kiwe-logo" class="header-logo">
+    <div class="header-menu">
+        <HeaderMenu />
+    </div>
     <div class="title-container">
         <h1 class="restaurant-name">{{rName}}</h1>
         <h2>Waiting list system</h2>
@@ -10,9 +12,13 @@
 </template>
 
 <script>
+import HeaderMenu from "./HeaderMenu.vue";
+
 export default {
     name: 'Header',
-    
+    components:{
+        HeaderMenu  
+    },
     computed: {
         rName(){
         return this.$store.state.rName
@@ -30,16 +36,12 @@ export default {
       background-color: #664B1E;
   }
 
-  .header-logo{
-      width: 50px;
-      display: block;
-      margin: 0 auto;
-      padding: 10px;
-  }
+
 
   .title-container{
       background-color: white;
       border-radius: 20px;
+      margin-bottom: 20px;
       .restaurant-name{
             font-size: 2rem;
             margin: 0 auto;

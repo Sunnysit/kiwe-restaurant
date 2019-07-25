@@ -2,7 +2,7 @@
   <div class="login-container" >
     <h1 class="container-title">QUEUE MANAGEMENT</h1>
     <section class="login-section">
-      <img class="logo" src="@/assets/kiwe-logo.png" alt="kiwe logo">
+      <img class="logo" src="@/./assets/kiwe-logo.png" alt="kiwe logo">
       <p class="logo-title">Kiwe</p>
     <form class="login-form">
         <label for="email">E-mail</label>
