@@ -1,14 +1,18 @@
 <template>
     <div class="container">
       <div class="lineup-control card-panel">
-        <h5>Line up system</h5>
+        <h5>Waiting list system</h5>
         <div  class="switch">
-        <label>
+        <!-- <label>
           Off
-          <input v-model="openLineUp"  type="checkbox">
+          <input v-model="openLineUp"  type="radio">
           <span class="lever"></span>
           On
-        </label>
+        </label> -->
+        <input type="radio" id="on" value="true" v-model="openLineUp">
+        <label for="on">On</label>
+        <input type="radio" id="off" value="false" v-model="openLineUp">
+        <label for="off">Off</label>
         </div>
       </div>
     </div>
