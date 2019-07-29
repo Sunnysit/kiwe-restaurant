@@ -5,7 +5,7 @@
                 <img class="menu-icon icon-active" src="@/assets/kiwe__orange___Home.png" alt="icon-home">
                <p>Home</p>
             </router-link>
-            <img src="@/./assets/kiwe-logo.png" alt="kiwe-logo" class="header-logo">
+            <img src="@/assets/kiwe__Logo.png" alt="kiwe-logo" class="header-logo">
             <router-link to="/settings" class="menu-item" >
                 <img class="menu-icon icon-normal" src="@/assets/kiwe___Settings.png" alt="icon-settings">
                 <img class="menu-icon icon-active" src="@/assets/kiwe__orange___Settings.png" alt="icon-settings">
@@ -18,13 +18,7 @@
 <script>
 export default {
     name: 'HeaderMenu',
-    activation: 0,
-
-    methods: { 
-        activeMenu:function (el){
-            this.activation(el);
-        }
-    }
+    
     
 }
 </script>

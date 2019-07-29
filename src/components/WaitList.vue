@@ -3,10 +3,10 @@
     <!-- <button class="btn green" v-on:click="getListData">Fetch</button> -->
     <div class="waitlist-container">
     <!-- Small Group -->
-    <div class="col s12 m4">
-        <p class="group-title">Small group</p>
+    <div class="col s12 m4 small-col">
+        <p class="group-title small-group">Small</p>
         <ul class="single-list">
-          <li class="card" v-for="spot in waitLineSmall" :key="spot.joinTime">
+          <li class="card card-small" v-for="spot in waitLineSmall" :key="spot.joinTime">
           <div class="card-content white-text">
             <h2 class="card-title"><span>{{spot.nickName}}</span><span class="text-orange">{{spot.grSize}}</span></h2>
             <p class="join-time"><span>Join time</span><span class="text-orange">{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}</span></p>
@@ -19,17 +19,17 @@
 
           <div class="card-action btn-group">
           <button v-on:click="sendReadyUser(`${spot.joinTime}_${spot.uid}`)" class="btn green"><img src="@/assets/kiwe__Done.png" alt="icon-done"></button>
-          <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange "><img src="@/assets/kiwe__FiveMinute.png" alt="icon-notification"></button>
+          <button v-on:click="sendNotification(`${spot.joinTime}_${spot.uid}`)" class="btn orange"><img src="@/assets/kiwe__FiveMinute.png" alt="icon-notification"></button>
           <button v-on:click="cancelUser(`${spot.joinTime}_${spot.uid}`, `${spot.uid}`)" class="btn grey"><img src="@/assets/kiwe__Cancel.png" alt="icon-cancel"></button></div>
           </li>
         </ul>
     </div>
     <div class="divider"></div>
       <!-- Medium Group -->
-    <div class="col s12 m4">
-         <p class="group-title">Medium group</p>
+    <div class="col s12 m4 medium-col">
+         <p class="group-title medium-group">Medium</p>
       <ul class="single-list">
-      <li class="card" v-for="spot in waitLineMedium" :key="spot.joinTime">
+      <li class="card card-medium" v-for="spot in waitLineMedium" :key="spot.joinTime">
         <div class="card-content white-text">
             <h2 class="card-title"><span>{{spot.nickName}}</span><span class="text-orange">{{spot.grSize}}</span></h2>
             <p class="join-time"><span>Join time</span><span class="text-orange">{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}</span></p>
@@ -50,10 +50,10 @@
     </div>
     <div class="divider"></div>
       <!-- Large Group -->
-    <div class="col s12 m4">
-      <p class="group-title">Large group</p>
+    <div class="col s12 m4 large-col">
+      <p class="group-title large-group">Large</p>
       <ul class="single-list">
-      <li class="card" v-for="spot in waitLineLarge" :key="spot.joinTime">
+      <li class="card card-large" v-for="spot in waitLineLarge" :key="spot.joinTime">
         <div class="card-content white-text">
             <h2 class="card-title"><span>{{spot.nickName}}</span><span class="text-orange">{{spot.grSize}}</span></h2>
             <p class="join-time"><span>Join time</span><span class="text-orange">{{new Date(spot.joinTime).getHours()}}:{{new Date(spot.joinTime).getMinutes()}}</span></p>
@@ -206,6 +206,8 @@ export default {
     
     .waitlist-section{  //(0,0,1,0)
       background-color: #fff;
+       background-color: $csecond-green;
+       padding: 0 10px;
       border-radius: 20px;
       
     }
@@ -217,14 +219,14 @@ export default {
     margin-top: 0;
     padding-bottom: 15px;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: capitalize;
     }
 
     .waitlist-container{  //(0,0,1,0)
       padding-top: 10px;
       display: grid;
       grid-template-columns: 1fr 5px 1fr 5px 1fr;
-      grid-gap: 10px;
+      // grid-gap: 10px;
       min-height: 500px;
 
       @media screen and (max-width: 700px) {
@@ -251,7 +253,7 @@ export default {
       .card{  //(0,0,1,0)
         border: 4px solid $main-green;
         border-radius: 10px;
-        
+        background-color: white;
         height: 180px;
         display: flex;
         justify-content: space-between;
@@ -306,6 +308,43 @@ export default {
     .text-orange{ //(0,0,1,0)
       color: $accent;
       
+    }
+
+    .medium-group{
+      // color: #664B1E;
+    }
+
+    .single-list .card-medium{
+      // border: 4px solid #664B1E;
+    }
+
+    .large-group{
+      // color: #f6a71b;
+    }
+
+    .single-list .card-large{
+      // border: 4px solid #f6a71b;
+    }
+
+    // .small-col{
+    //   background-color: $csecond-green;
+    // }
+
+    // .medium-col{
+    //   background-color: $csecond-green;
+    // }
+
+    // .large-col{
+    //   background-color: $csecond-green;
+    // }
+    .single-list .card-action .btn.orange{
+      background-color: #f6a71b;
+      box-shadow: 2px 2px 4px #f6a71b;
+    }
+
+    .single-list .card-action .btn.grey{
+      background-color: #d00000;
+        box-shadow: 2px 2px 4px #d00000;
     }
     
 </style>

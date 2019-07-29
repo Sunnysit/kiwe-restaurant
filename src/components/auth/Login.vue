@@ -2,8 +2,8 @@
   <div class="login-container" >
     <h1 class="container-title">QUEUE MANAGEMENT</h1>
     <section class="login-section">
-      <img class="logo" src="@/./assets/kiwe-logo.png" alt="kiwe logo">
-      <p class="logo-title">Kiwe</p>
+      <img class="logo" src="@/assets/kiwe__Logo.png" alt="kiwe logo">
+      <p class="logo-title">kiwe</p>
     <form class="login-form">
         <label for="email">E-mail</label>
         <input v-model="inputEmail" type="email" name="email" >
@@ -27,7 +27,9 @@ export default {
       return{
           inputEmail: '',
           inputPwd: '',
-          errMsg:''
+          errMsg:'',
+          
+          
       }
   },
   methods: {
