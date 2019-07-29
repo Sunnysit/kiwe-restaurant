@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .header-logo{
+  .header-logo{ //(0,0,1,0)
       width: 50px;
       height: 50px;
       display: block;
@@ -39,10 +39,10 @@ export default {
   }
 
 
-.menu-item{
+.menu-item{ //(0,0,1,0)
     margin-bottom: 0;
     text-decoration: none;
-    p{
+    p{  //(0,0,0,1)
         margin: 0;
         color: white;
     }
@@ -50,30 +50,30 @@ export default {
 }
 
 
-#nav {
+#nav {  //(0,1,0,0)
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
 }
 
 
-.menu-item{
+.menu-item{ //(0,0,1,0)
     padding: 0 10px;
 
-    .menu-icon{
+    .menu-icon{ //(0,0,1,0)
         width: 40px;
         margin: 0 auto;
     }
 
-    .icon-normal{
+    .icon-normal{   //(0,0,1,0)
         display: block;
     }
-    .icon-active{
+    .icon-active{   //(0,0,1,0)
         display: none;
     }
 }
 
-.menu-item svg path {
+.menu-item svg path {   //(0,0,1,2)
    color: white !important;
     fill: white;
     transform: scale(.7);
@@ -81,23 +81,14 @@ export default {
 }
 
 
-
-//   .router-link-active p,
-// .router-link-active svg path 
-// {
-//     color: orange !important;
-//     fill: orange;
-    
-// }
-
-.router-link-active{
-    p{
+.router-link-active{    //(0,0,1,0)
+    p{  //(0,0,0,1)
         color: orange;
     }
-    .icon-normal{
+    .icon-normal{   //(0,0,1,0)
         display: none;
     }
-    .icon-active{
+    .icon-active{   //(0,0,1,0)
         display: block;
     }
 }

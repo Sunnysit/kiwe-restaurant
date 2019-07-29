@@ -32,17 +32,15 @@ export default {
 
   @import "../sass/_variables.scss";
 
-  .header{
+  .header{  //(0,0,1,0)
       background-color: #664B1E;
   }
 
-
-
-  .title-container{
+  .title-container{ //(0,0,1,0)
       background-color: white;
       border-radius: 20px;
       margin-bottom: 20px;
-      .restaurant-name{
+      .restaurant-name{ //(0,0,1,0)
             font-size: 2rem;
             margin: 0 auto;
             font-family: "Source Serif Pro", sans-serif;
@@ -51,8 +49,8 @@ export default {
             line-height: 1;
             padding-top: 15px;
       }
-      h2{
-          color: #62af46;
+      h2{   //(0,0,0,1)
+          color: $main-green;
           font-family: "Source Serif Pro", sans-serif;
           font-size: 1.2rem;
           margin-top: 0;

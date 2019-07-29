@@ -80,7 +80,7 @@ export default {
 <style scoped lang="scss">
 @import "../../sass/_variables.scss";
 
-    .logo{
+    .logo{ //(0,0,1,0)
       width: 120px;
       height: auto;
       display: block;
@@ -88,17 +88,17 @@ export default {
       margin-top: 30px;
     }
 
-    .logo-title{
+    .logo-title{  //(0,0,1,0)
     text-align: center;
     font-family: Lobster, sans-serif;
     margin-top: 1vh;
-    color: #62af46;
+    color: $main-green;
     font-size: 2.5rem;
     margin-bottom: 30px;
     }
 
-    .container-title {
-    color: #62af46;
+    .container-title {  //(0,0,1,0)
+    color: $main-green;
     text-transform: uppercase;
     font-size: 2rem;
     font-family: "Source Serif Pro";
@@ -106,8 +106,8 @@ export default {
     margin-top: 10px;
     }
 
-    .login-form{
-        label {
+    .login-form{  //(0,0,1,0)
+        label { //(0,0,0,1)
         font-family: "Source Serif Pro", "Times New Roman", serif;
         font-size: 1.25rem;
         color: black;
@@ -115,7 +115,7 @@ export default {
         display: block;
           }
 
-        input{
+        input{  //(0,0,0,1)
               background-color: #ebf1c8 !important;
               font-family: "Open Sans", Arial, sans-serif;
               font-size: 1rem;

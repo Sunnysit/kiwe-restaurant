@@ -42,13 +42,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .lineup-control{
+@import "../sass/_variables.scss";
+  .lineup-control{  //(0,0,1,0)
       background-color: #fff;
       border-radius: 20px;
       margin-bottom: 20px;
       padding: 8px 0;
-      h5{
-        color: #62af46;
+      h5{ //(0,0,0,1)
+        color: $main-green;
         font-family: "Source Serif Pro", sans-serif;
         font-size: 1.2rem;
         margin: 0;

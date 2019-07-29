@@ -195,18 +195,18 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../sass/_variables.scss";
-  .options-container{
+  .options-container{ //(0,0,1,0)
   background-color: #fff;
   border-radius: 20px;
   padding-bottom: 8px;
 }
 
-  .card-panel{
+  .card-panel{  //(0,0,1,0)
     margin-top: 8px;
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    h4{
+    h4{ //(0,0,0,1)
     font-size: 1.2rem;
     margin: 0 auto;
     font-weight: bold;
@@ -221,12 +221,12 @@ export default {
     
   }
 
-  .input-field{
+  .input-field{ //(0,0,1,0)
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
 
-      input{
+      input{  //(0,0,0,1)
         border: 3px solid $accent;
         padding: 10px;
         border-radius: 5px;

@@ -116,7 +116,7 @@ export default {
     let db = firebase.firestore();
  
 
-    db.collection("waitlist").where("status", "==", 'waiting').where("date","==",currentDate).where("rid","==",rid)
+    db.collection("waitlist").where("status", "==", 'waiting').where("rid","==",rid)
     .onSnapshot(function(querySnapshot) {
            let spotCounter = {
                 smallSpot:1,
@@ -204,13 +204,13 @@ export default {
 <style scoped lang="scss">
 @import "../sass/_variables.scss";
     
-    .waitlist-section{
+    .waitlist-section{  //(0,0,1,0)
       background-color: #fff;
       border-radius: 20px;
       
     }
 
-    .group-title{
+    .group-title{ //(0,0,1,0)
     color: $main-green;
     font-family: "Source Serif Pro", sans-serif;
     font-size: 1.2rem;
@@ -220,7 +220,7 @@ export default {
     text-transform: uppercase;
     }
 
-    .waitlist-container{
+    .waitlist-container{  //(0,0,1,0)
       padding-top: 10px;
       display: grid;
       grid-template-columns: 1fr 5px 1fr 5px 1fr;
@@ -233,13 +233,13 @@ export default {
 
     }
 
-    .divider{
+    .divider{ //(0,0,1,0)
     background-color: $main-green;
     margin: 20px 0;
     border-radius: 20px;
     }
 
-    .single-list{
+    .single-list{ //(0,0,1,0)
       list-style: none;
       display: flex;
       flex-wrap: wrap;
@@ -248,7 +248,7 @@ export default {
       padding-left: 0;
       align-items: center;
 
-      .card{
+      .card{  //(0,0,1,0)
         border: 4px solid $main-green;
         border-radius: 10px;
         
@@ -264,37 +264,37 @@ export default {
 
       .card-title,
       .join-time,
-      .wait-time{
+      .wait-time{ //(0,0,1,0)
         display: flex;
         justify-content: space-between;
         padding: 0 8px;
         margin: 0;
         font-weight: bold;
       }
-      .card-content{
+      .card-content{  //(0,0,1,0)
         width: 100%;
       }
 
-      .addition-container p{
+      .addition-container p{  //(0,0,1,1)
         color: $accent;
         margin: 0;
         font-weight: bold;
       }
 
-      .card-action{
+      .card-action{ //(0,0,1,0)
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
         margin-bottom: 8px;
         padding: 0 8px;
-        .btn{
+        .btn{ //(0,0,1,0)
           width: 40px;
           height:40px;
           background-color: $main-green;
           outline: none;
           border: none;
-          img{
+          img{  //(0,0,0,1)
             display: block;
             width: 20px;
             margin: 0 auto;
@@ -303,7 +303,7 @@ export default {
         }
       }
     }
-    .text-orange{
+    .text-orange{ //(0,0,1,0)
       color: $accent;
       
     }
