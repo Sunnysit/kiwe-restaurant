@@ -48,6 +48,8 @@ export default {
       border-radius: 20px;
       margin-bottom: 20px;
       padding: 8px 0;
+      display: flex;
+      flex-direction: column;
       h5{ //(0,0,0,1)
         color: $main-green;
         font-family: "Source Serif Pro", sans-serif;
