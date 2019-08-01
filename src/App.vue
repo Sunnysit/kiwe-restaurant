@@ -23,7 +23,7 @@ body{ //(0,0,0,1)
   overflow-x: hidden;
 }
 #nav {   //(0,1,0,0)
-  padding: 20px 0 0;
+  padding: 10px 0 0;
   a {  //(0,0,0,1)
     font-weight: bold;
     color: #2c3e50;
@@ -45,7 +45,7 @@ body{ //(0,0,0,1)
     padding: 10px 0;
     outline: none;
     border: none;
-    box-shadow: 2px 2px 4px $bt-background-color;
+
     cursor: pointer;
   }
 
@@ -84,7 +84,7 @@ body{ //(0,0,0,1)
 }
 
 .lineup-control-container{  //(0,0,1,0)
-      min-height: 90vh;
+      // min-height: 90vh;
     }
 
 .no-lineup-panel{ //(0,0,1,0)
@@ -210,7 +210,7 @@ body{ //(0,0,0,1)
 =============================================*/
 
   .options-container{ //(0,0,1,0)
-  background-color: #fff;
+  // background-color: #fff;
   border-radius: 20px;
   padding-bottom: 8px;
 }
@@ -255,7 +255,7 @@ body{ //(0,0,0,1)
   /*----------  Lineup Switch Component  ----------*/
   
     .lineup-control{  //(0,0,1,0)
-      background-color: #fff;
+      // background-color: #fff;
       border-radius: 20px;
       margin-bottom: 20px;
       padding: 8px 0;

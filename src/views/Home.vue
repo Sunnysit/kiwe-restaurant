@@ -2,6 +2,7 @@
  <section class="home-section">
    <Header />
   <div class="lineup-control-container container">
+    <h1 class="restaurant-name">{{rName}}</h1>
     <div v-if="openLineUp">
       <WaitList />
     </div>
@@ -30,28 +31,36 @@ export default {
     openLineUp(){
             return this.$store.state.openLineUp
           },
+       rName(){
+        return this.$store.state.rName
+        }
     }
 }
 </script>
 <style lang="scss" scoped>
+@import "../sass/_variables.scss";
 .home-section{ //(0,0,1,0)
-  background-color: #664B1E;
-
+  background-color: $csecond-green;
 }
 .title{ //(0,0,1,0)
   font-size: 3rem;
 
 }
 
-.lineup-control-container{  //(0,0,1,0)
-      min-height: 90vh;
-    }
 
 .no-lineup-panel{ //(0,0,1,0)
   text-align: center;
   background-color: #fff;
   border-radius: 20px;
   padding: 8px 0;
+}
+
+.restaurant-name{
+  font-family: $sc-font-family;
+  text-transform: uppercase;
+  color: $main-green;
+  font-size: 2rem;
+  margin: 0 5px;
 }
 
 </style>

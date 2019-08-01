@@ -3,10 +3,10 @@
     <div class="header-menu">
         <HeaderMenu />
     </div>
-    <div class="title-container">
+    <!-- <div class="title-container">
         <h1 class="restaurant-name">{{rName}}</h1>
         <h2>Waiting list system</h2>
-    </div>
+    </div> -->
 </section>
     
 </template>

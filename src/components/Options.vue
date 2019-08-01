@@ -196,7 +196,7 @@ export default {
 <style scoped lang="scss">
 @import "../sass/_variables.scss";
   .options-container{ //(0,0,1,0)
-  background-color: #fff;
+  // background-color: #fff;
   border-radius: 20px;
   padding-bottom: 8px;
 }
@@ -207,15 +207,14 @@ export default {
     flex-wrap: wrap;
     justify-content: space-around;
     h4{ //(0,0,0,1)
-    font-size: 1.2rem;
-    margin: 0 auto;
-    font-weight: bold;
-    color: black;
-    line-height: 1;
-    padding-top: 15px;
-    width: 100%;
-    margin-bottom: 20px;
-    }
+        color: #664B1E;
+        font-family: "Source Serif Pro", sans-serif;
+        font-size: 1.2rem;
+        margin: 0;
+        padding-bottom: 15px;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
     
 
     

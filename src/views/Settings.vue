@@ -25,9 +25,10 @@ export default {
 
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
+@import "../sass/_variables.scss";
 .settings-section{
-  background-color: #664B1E;
+  background-color: $csecond-green;
   min-height:100vh;
 
 }

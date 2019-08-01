@@ -5,7 +5,7 @@
                 <img class="menu-icon icon-active" src="@/assets/kiwe__orange___Home.png" alt="icon-home">
                <p>Home</p>
             </router-link>
-            <img src="@/assets/kiwe__Logo.png" alt="kiwe-logo" class="header-logo">
+            <h2 class="section-title">Waiting list system</h2>
             <router-link to="/settings" class="menu-item" >
                 <img class="menu-icon icon-normal" src="@/assets/kiwe___Settings.png" alt="icon-settings">
                 <img class="menu-icon icon-active" src="@/assets/kiwe__orange___Settings.png" alt="icon-settings">
@@ -24,6 +24,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../sass/_variables.scss";
   .header-logo{ //(0,0,1,0)
       width: 50px;
       height: 50px;
@@ -87,6 +88,10 @@ export default {
     }
 }
 
+.section-title{
+    color: white;
+    font-family: $sc-font-family;
+}
 
 </style>
 

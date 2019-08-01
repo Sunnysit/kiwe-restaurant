@@ -1,10 +1,11 @@
 <template>
   <section class="waitlist-section">
     <!-- <button class="btn green" v-on:click="getListData">Fetch</button> -->
+    <p class="list-counter">Current Parties: {{listTotalCounter}}<span></span></p>
     <div class="waitlist-container">
     <!-- Small Group -->
     <div class="col s12 m4 small-col">
-        <p class="group-title small-group">Small</p>
+        <p class="group-title small-group">Small Group</p>
         <ul class="single-list">
           <li class="card card-small" v-for="spot in waitLineSmall" :key="spot.joinTime">
           <div class="card-content white-text">
@@ -27,7 +28,7 @@
     <div class="divider"></div>
       <!-- Medium Group -->
     <div class="col s12 m4 medium-col">
-         <p class="group-title medium-group">Medium</p>
+         <p class="group-title medium-group">Medium Group</p>
       <ul class="single-list">
       <li class="card card-medium" v-for="spot in waitLineMedium" :key="spot.joinTime">
         <div class="card-content white-text">
@@ -51,7 +52,7 @@
     <div class="divider"></div>
       <!-- Large Group -->
     <div class="col s12 m4 large-col">
-      <p class="group-title large-group">Large</p>
+      <p class="group-title large-group">Large Group</p>
       <ul class="single-list">
       <li class="card card-large" v-for="spot in waitLineLarge" :key="spot.joinTime">
         <div class="card-content white-text">
@@ -86,7 +87,8 @@ export default {
   name: 'WaitList',
   data:function(){
       return{
-        currentTime: new Date().getTime()
+        currentTime: new Date().getTime(),
+        listTotalCounter: 0
       }
   },
   computed:{
@@ -123,13 +125,14 @@ export default {
                 mediumSpot: 1,
                 largeSpot: 1,
               }
+            that.listTotalCounter=0;
         that.$store.dispatch('emptyWaitList').then(()=>{
             querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data());
              //Add People to waitlist-spec
                 let item = doc.data();
-           
+                that.listTotalCounter++;
                     //Add People to waitlist-small
                     if(item.grSize<=that.$store.state.sizeStandard.small)
                     {   
@@ -205,15 +208,22 @@ export default {
 @import "../sass/_variables.scss";
     
     .waitlist-section{  //(0,0,1,0)
-      background-color: #fff;
+  
        background-color: $csecond-green;
        padding: 0 10px;
       border-radius: 20px;
       
     }
 
+    .list-counter{
+      color: #664B1E;
+      font-family: "Source Serif Pro", sans-serif;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
     .group-title{ //(0,0,1,0)
-    color: $main-green;
+    color: #664B1E;
     font-family: "Source Serif Pro", sans-serif;
     font-size: 1.2rem;
     margin-top: 0;
@@ -225,7 +235,7 @@ export default {
     .waitlist-container{  //(0,0,1,0)
       padding-top: 10px;
       display: grid;
-      grid-template-columns: 1fr 5px 1fr 5px 1fr;
+      grid-template-columns: 1fr 2px 1fr 2px 1fr;
       // grid-gap: 10px;
       min-height: 500px;
 
@@ -236,7 +246,7 @@ export default {
     }
 
     .divider{ //(0,0,1,0)
-    background-color: $main-green;
+    background-color: rgba(149, 201, 130, 0.726);;
     margin: 20px 0;
     border-radius: 20px;
     }
@@ -339,12 +349,12 @@ export default {
     // }
     .single-list .card-action .btn.orange{
       background-color: #f6a71b;
-      box-shadow: 2px 2px 4px #f6a71b;
+
     }
 
     .single-list .card-action .btn.grey{
       background-color: #d00000;
-        box-shadow: 2px 2px 4px #d00000;
+       
     }
     
 </style>
