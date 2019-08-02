@@ -19,30 +19,30 @@
          <h4>Estimated wait time</h4>
          <div class="input-field">
           <input v-model.lazy="estTimeSmall"  id="time-small" type="number" >
-          <label class="active" for="time-small">for small tables</label>
+          <label class="active" for="time-small">Small group</label>
         </div>
         <div class="input-field">
           <input v-model.lazy="estTimeMedium"  id="time-medium" type="number" >
-          <label class="active" for="time-medium">for medium tables</label>
+          <label class="active" for="time-medium">Medium group</label>
         </div>
          <div class="input-field">
           <input v-model.lazy="estTimeLarge"  id="time-large" type="number" >
-          <label class="active" for="time-medium">for large tables</label>
+          <label class="active" for="time-medium">Large group</label>
         </div>
     </div>
     <div class="card-panel">
          <h4>Max table seat</h4>
          <div class="input-field">
           <input v-model.lazy="sizeStandardSmall"  id="size-small" type="number" >
-          <label class="active" for="size-small">for small tables</label>
+          <label class="active" for="size-small">Small group</label>
         </div>
         <div class="input-field">
           <input v-model.lazy="sizeStandardMedium"  id="size-medium" type="number" >
-          <label class="active" for="size-medium">for medium tables</label>
+          <label class="active" for="size-medium">Medium group</label>
         </div>
          <div class="input-field">
           <input v-model.lazy="sizeStandardLarge"  id="size-large" type="number" >
-          <label class="active" for="size-medium">for large tables</label>
+          <label class="active" for="size-medium">Large group</label>
         </div>
     </div>
      <button v-on:click="saveOptions" class="btn btn-text">Save</button>
@@ -202,18 +202,22 @@ export default {
 }
 
   .card-panel{  //(0,0,1,0)
-    margin-top: 8px;
+    margin-top: 16px;
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     h4{ //(0,0,0,1)
         color: #664B1E;
         font-family: "Source Serif Pro", sans-serif;
         font-size: 1.2rem;
         margin: 0;
-        padding-bottom: 15px;
+        padding-bottom: 8px;
         font-weight: bold;
         text-transform: capitalize;
+      }
+
+      .input-field{
+        margin: 0 5px;
       }
     
 

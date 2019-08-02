@@ -83,9 +83,6 @@ body{ //(0,0,0,1)
 
 }
 
-.lineup-control-container{  //(0,0,1,0)
-      // min-height: 90vh;
-    }
 
 .no-lineup-panel{ //(0,0,1,0)
   text-align: center;

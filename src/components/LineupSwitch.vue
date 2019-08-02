@@ -10,7 +10,7 @@
           On
         </label> -->
         <input type="radio" id="on" value="true" v-model="openLineUp">
-        <label for="on">On</label>
+        <label for="on">On</label>&nbsp;
         <input type="radio" id="off" value="false" v-model="openLineUp">
         <label for="off">Off</label>
         </div>

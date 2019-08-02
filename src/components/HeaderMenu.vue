@@ -3,7 +3,7 @@
             <router-link to="/home" class="menu-item">
                 <img class="menu-icon icon-normal" src="@/assets/kiwe___Home.png" alt="icon-home">
                 <img class="menu-icon icon-active" src="@/assets/kiwe__orange___Home.png" alt="icon-home">
-               <p>Home</p>
+               <p>Dashboard</p>
             </router-link>
             <h2 class="section-title">Waiting list system</h2>
             <router-link to="/settings" class="menu-item" >
